@@ -22,6 +22,7 @@ public class Programmers0124 {
                 visited[i] = true;
                 answer += 1;
                 DFS(i, computers, n);
+                // 커밋 확인용
             }
         }
 
