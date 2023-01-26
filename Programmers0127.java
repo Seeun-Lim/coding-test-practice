@@ -12,11 +12,6 @@ public class Programmers0127 {
         }
     }
 
-    public static void main(String[] args) {
-        System.out.println(solution("hit", "cog", new String[]{"hot", "dot", "dog", "lot", "log", "cog"}));
-        System.out.println(solution("hit", "cog", new String[]{"hot", "dot", "dog", "lot", "log"}));
-    }
-
     public static int solution(String begin, String target, String[] words) {
         int answer = 0;
 
@@ -36,9 +31,8 @@ public class Programmers0127 {
                         if(poll.word.charAt(j) != word.charAt(j)) cnt++;
                     }
 
-                    if(cnt == 1 && word.equals(target)){
-                        return poll.depth + 1;
-                    } else if(cnt == 1){
+                    if(cnt == 1){
+                        if(word.equals(target)) return poll.depth + 1;
                         q.add(new Word(word, poll.depth + 1));
                         visited[i] = true;
                     }
@@ -48,4 +42,9 @@ public class Programmers0127 {
 
         return answer;
     }
+
+//    public static void main(String[] args) {
+//        System.out.println(solution("hit", "cog", new String[]{"hot", "dot", "dog", "lot", "log", "cog"}));
+//        System.out.println(solution("hit", "cog", new String[]{"hot", "dot", "dog", "lot", "log"}));
+//    }
 }
